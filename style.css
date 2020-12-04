@@ -1,0 +1,238 @@
+:root{
+    --Dark-Blue: hsl(240, 38%, 20%);
+    --Grayish-Blue: hsl(240, 18%, 77%);
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    color: var(--Dark-Blue);
+    font-size: 32px;
+    /* Weights: 300, 500, 700 */
+}
+
+h1{
+    position: relative;
+    width: 115%;
+    font-size: 1em;
+    font-weight: 300;
+    margin-bottom: 30px;
+    margin-right: -20px;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    z-index: 20;
+}
+h2{
+    font-size: .7em;
+    font-weight: 700;
+    display: inline;
+}
+p{
+    font-size: .6em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: inline;
+    color: var(--Grayish-Blue);
+}
+
+.container{
+    max-width: 1200px;
+    margin: 100px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.tanya, .john{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex: 2;
+    transition: all 0.3s ease;
+}
+
+.tanya{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.john{
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.slide{
+    left: 0;
+}
+.slide1{
+    left: -100%;
+}
+
+
+
+
+.info{
+    flex: 1;
+    position: relative;
+}
+
+/* imagen */
+
+.imagen{
+    flex: 1;
+    position: relative;
+}
+    .imagen > img{
+        z-index: 0;
+        box-shadow: 5px 5px 50px -5px var(--Grayish-Blue);
+    }
+
+#prev{
+    position: absolute;
+    cursor: pointer;
+    bottom: -20px;
+    left: 70px;
+    background-color: #ffff;
+    padding: 20px;
+    margin: 0 -3px;
+    border-radius: 30px 0 0 30px;
+}
+
+#next{
+    position: absolute;
+    cursor: pointer;
+    bottom: -20px;
+    left: 122px;
+    background-color: #ffff;
+    padding: 20px;
+    margin: 0 -3px;
+    border-radius: 0 30px 30px 0;
+}
+
+
+.attribution{
+    font-size: .5em;
+}
+
+/* fondo decorado */
+.fondo .bg{
+    position: absolute;
+    top: 35px;
+    right: 5%;
+    z-index: -1;
+}
+    @media(max-width:1200px){
+        .fondo .bg{
+            right: -5%;
+        }
+        h1{
+            font-size: .9em;
+            margin-bottom: 15px;
+        }
+    }
+
+.fondo-info .quote{
+    position: absolute;
+    top: 180px;
+    left: 10%;
+}
+
+.fondo-info .curve{
+    position: absolute;
+    bottom: 0;
+    left: -200px;
+}
+
+/* mobile */
+@media(max-width:940px){
+    .container{
+        width: 90vw;
+    }
+    h1{
+        width: 95%;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    h2{
+        text-align: center;
+        display: block;
+        margin: 5px auto;
+    }
+    p{
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+    }
+    .tanya, .john{
+        flex-flow: column-reverse;
+    }
+    .fondo .bg{
+        right: 4%;
+        width: 70%;
+        min-width: 450px;
+    }
+    .fondo-info .quote{
+        top: 590px;
+        left: 42%;
+        width: 100px;
+    }
+    .fondo-info .curve{
+        bottom: -350px;
+        left: -50px;
+        z-index: -1;
+    }
+
+    #prev{
+        left: 225px;
+    }
+    
+    #next{
+        left: 275px;
+    }
+    .imagen{
+        margin: 0 auto;
+        margin-bottom: 80px;
+        text-align: center;
+    }
+        .imagen > img{
+            width: 80%;
+            margin: 0 auto;
+        }
+    .attribution{
+        font-size: .5em;
+        text-align: right;
+    }
+}
+@media(max-width:600px){
+    #prev{
+        left: 40%;
+    }
+    
+    #next{
+        left: 49%;
+    }
+    .fondo-info .quote{
+        top: 80%;
+    }
+}
+
+@media(max-width:450px){
+    .fondo .bg{
+        min-width: 400px;
+    }
+    #prev{
+        left: 37%;
+    }
+    
+    #next{
+        left: 49%;
+    }
+    .fondo-info .quote{
+        top: 65%;
+    }
+}
+
+/* solapado */
+.hide{
+    display: none;
+}
